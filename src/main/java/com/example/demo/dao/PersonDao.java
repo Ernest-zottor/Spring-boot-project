@@ -22,4 +22,6 @@ public interface PersonDao {
 	public int deletePersonById(UUID id);
 	
 	public int  updatePersonById(UUID id, Person person);
+	
+	public String getPersonName(UUID id);
 }

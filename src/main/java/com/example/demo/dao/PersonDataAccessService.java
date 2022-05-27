@@ -56,6 +56,15 @@ public class PersonDataAccessService implements PersonDao {
 		.orElse(0);
 	}
 
+	@Override
+	public String getPersonName(UUID id) {
+		Optional<Person> personInDb = selectPersonById(id);
+		if(!personInDb.isPresent()) {
+			return "Person not in database";
+		}
+		return personInDb.get().getName();
+	}
+
 	
 
 }

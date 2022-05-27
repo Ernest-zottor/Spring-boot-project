@@ -52,4 +52,9 @@ public class PersonController {
 	public void updatePersonById(@PathVariable("id") UUID id, @RequestBody Person person) {
 		personService.updatePerson(id, person);
 	}
+	
+	@GetMapping(path = "/name/{id}")
+	public String getPersonName(@PathVariable("id") UUID id) {
+		return personService.getPersonName(id);
+}
 }

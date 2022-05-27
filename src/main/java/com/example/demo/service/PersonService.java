@@ -42,4 +42,8 @@ public class PersonService {
 	public int updatePerson(UUID id, Person newPerson) {
 		return personDao.updatePersonById(id, newPerson);
 	}
+	
+	public String getPersonName(UUID id) {
+		return personDao.getPersonName(id);
+}
 }
