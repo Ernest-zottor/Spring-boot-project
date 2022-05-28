@@ -14,6 +14,7 @@ import com.example.demo.model.Person;
 public class PersonDataAccessService implements PersonDao {
 	
 	private static List<Person> DB = new ArrayList<>();
+//	UUID id = UUID.randomUUID();
 
 	@Override
 	public int insertPerson(UUID id, Person person) {
@@ -63,6 +64,21 @@ public class PersonDataAccessService implements PersonDao {
 			return "Person not in database";
 		}
 		return personInDb.get().getName();
+	}
+
+	@Override
+	public Person findById(int id) {
+		return DB.stream().filter(person -> person.getUserId() == id)
+		.findFirst()
+		.orElse(new Person(-1, "UNKNOWN", "UKNOWN"));
+		
+	}
+
+	@Override
+	public void save(Person person) {
+//		person.setId(id);
+		DB.add(person);
+		
 	}
 
 	

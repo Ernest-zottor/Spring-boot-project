@@ -46,4 +46,12 @@ public class PersonService {
 	public String getPersonName(UUID id) {
 		return personDao.getPersonName(id);
 }
+	public Person findById(int id) {
+		return personDao.findById(id);
+	}
+	
+	
+	public void save(Person person) {
+		personDao.save(person);
+	}
 }

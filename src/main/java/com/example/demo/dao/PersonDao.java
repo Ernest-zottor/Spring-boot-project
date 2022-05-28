@@ -24,4 +24,10 @@ public interface PersonDao {
 	public int  updatePersonById(UUID id, Person person);
 	
 	public String getPersonName(UUID id);
+	
+	public Person findById(int id);
+    
+    public void save(Person person);
+	 
+	 
 }
